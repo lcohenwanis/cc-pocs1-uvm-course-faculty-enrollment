@@ -55,6 +55,20 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Quick Start
+
+The easiest way to get started is to use the quick start script:
+
+```bash
+python quickstart.py
+```
+
+This interactive script will guide you through:
+- Generating sample data
+- Running network analysis
+- Viewing database statistics
+- Running example queries
+
 ### Quick Start with Sample Data
 
 Generate and analyze sample data to test the system:
