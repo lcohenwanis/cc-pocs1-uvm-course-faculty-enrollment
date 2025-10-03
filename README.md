@@ -24,7 +24,11 @@ A comprehensive Python system for scraping, storing, and analyzing UVM course en
 ├── config.py                    # Configuration settings
 ├── requirements.txt             # Python dependencies
 ├── generate_sample_data.py      # Sample data generator for testing
+├── query_database.py            # Database query utility
+├── export_networks.py           # Network export utility
+├── create_visualizations.py     # Visualization generation script
 ├── src/
+│   ├── __init__.py             # Package initialization
 │   ├── database.py             # Database schema and operations
 │   ├── scraper.py              # Web scraping functionality
 │   ├── loader.py               # Data loading into database
@@ -61,6 +65,12 @@ python generate_sample_data.py
 
 # Analyze the network
 python main.py analyze
+
+# Query the database
+python query_database.py departments
+
+# Export networks for external analysis
+python export_networks.py faculty csv
 ```
 
 ### Full Pipeline
@@ -110,6 +120,80 @@ Edit `config.py` to customize:
 - Database location
 - Network output directories
 - Scraping delays and timeouts
+
+## Utility Scripts
+
+### Query Database (`query_database.py`)
+
+Interactive database queries:
+
+```bash
+# List all departments
+python query_database.py departments
+
+# Show department statistics
+python query_database.py department CS
+
+# Search for faculty
+python query_database.py faculty "Smith"
+
+# Search for courses
+python query_database.py courses "Machine Learning"
+
+# Show courses taught by a faculty member
+python query_database.py faculty-courses "John Smith"
+
+# Show instructors for a course
+python query_database.py course-instructors "CS 101"
+```
+
+### Export Networks (`export_networks.py`)
+
+Export network data for analysis in other tools (Gephi, Cytoscape, R, etc.):
+
+```bash
+# Export faculty collaboration network to CSV
+python export_networks.py faculty csv
+
+# Export bipartite network to GraphML (for Gephi)
+python export_networks.py bipartite graphml
+
+# Export course network to GEXF
+python export_networks.py course gexf
+
+# Export with year filtering
+python export_networks.py faculty json --start-year 2015 --end-year 2020
+```
+
+Supported formats:
+- `csv`: Node and edge CSV files (great for spreadsheet analysis)
+- `graphml`: GraphML format (Gephi, Cytoscape, yEd)
+- `gexf`: GEXF format (Gephi)
+- `json`: JSON format (web applications, custom tools)
+- `edgelist`: Simple edge list (many graph tools)
+
+### Create Visualizations (`create_visualizations.py`)
+
+Generate comprehensive visualizations and plots:
+
+```bash
+# Create all visualizations
+python create_visualizations.py --all
+
+# Create specific visualizations
+python create_visualizations.py --temporal
+python create_visualizations.py --distribution
+python create_visualizations.py --interdisciplinary
+
+# Create temporal plots for specific year range
+python create_visualizations.py --temporal --start-year 2015 --end-year 2020
+```
+
+Generated visualizations include:
+- Department distribution plots (courses and faculty per department)
+- Interdisciplinary analysis (faculty teaching across departments)
+- Temporal evolution (network metrics over time)
+- Network diagrams (bipartite, faculty collaboration, course networks)
 
 ## Database Schema
 
