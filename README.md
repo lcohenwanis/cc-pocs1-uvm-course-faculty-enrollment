@@ -195,6 +195,20 @@ Generated visualizations include:
 - Temporal evolution (network metrics over time)
 - Network diagrams (bipartite, faculty collaboration, course networks)
 
+### Jupyter Notebook Example
+
+An example Jupyter notebook is provided in `examples/network_analysis_example.ipynb` that demonstrates:
+- Programmatic database queries
+- Custom network analysis
+- Interactive visualizations
+- Data export for further analysis
+
+To use the notebook:
+```bash
+pip install jupyter
+jupyter notebook examples/network_analysis_example.ipynb
+```
+
 ## Database Schema
 
 The SQLite database contains the following tables:

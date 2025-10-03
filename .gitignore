@@ -34,6 +34,7 @@ data/
 *.tsv
 *.txt
 !requirements.txt
+!API_DOCUMENTATION.md
 
 # Logs
 *.log
@@ -52,9 +53,8 @@ data/
 *.jpeg
 *.pdf
 
-# Jupyter Notebooks
+# Jupyter Notebooks checkpoints
 .ipynb_checkpoints/
-*.ipynb
 
 # Testing
 .pytest_cache/

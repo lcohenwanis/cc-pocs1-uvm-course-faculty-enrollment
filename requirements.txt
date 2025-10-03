@@ -7,3 +7,4 @@ matplotlib>=3.7.0
 numpy>=1.24.0
 scipy>=1.10.0
 python-louvain>=0.16
+jupyter>=1.0.0
